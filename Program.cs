@@ -1,61 +1,28 @@
 ﻿using System;
 
-namespace programIntro
+namespace dArrayReverse
 {
-    class Program
+    class reverse1DArray
     {
-        static void Main(string[] args)
-        {   //birOlculuArraydeEdedleriTersYazmaq
-            //int[] numbers = { 1, 0,40, 5, 0 };
-
-            //int j = numbers.Length-1;
-            //int i = 0;
-            //while (i <numbers.Length/2)
-            //{
-            //    int a = numbers[i];
-            //    int b = numbers[j];
-            //    numbers[j] = a;
-            //    numbers[i] = b;
-            //    j--;
-            //    i++;
-
-            //}
-            //for (int h = 0; h < numbers.Length; h++)
-            //{
-            //    Console.WriteLine(numbers[h]);
-            //}
-
-            //ArraydekiUniqueReqemleriPrintEtmek
-
-            int[] numbers = { 1, 5, 8, 5,8 };
-            bool isUnique = true;
-
-            for (int i = 0; i < numbers.Length; i++)
+        static void Main(string[] arg)
+        {
+            int[] numbers = { 7, 5,7, 10, 52 };
+            int a = 0;
+            int b = 0;
+            for (int i = 0, j=numbers.Length - 1; i < numbers.Length/2 && j>0; i++,j--)
             {
-                for (int j = 0; j < numbers.Length; j++)
 
-                {
-                    if (j != i && numbers[j] == numbers[i])
-                    {
-                        isUnique = false;
-                        break;
-                        
-                    }
-                    else
-                    {
-                        isUnique = true;
-                    }
-                    
-                }
-
-                if (isUnique==true)
-                {
-                    Console.WriteLine(numbers[i]);
-                }
+                a = numbers[i];
+                b = numbers[j];
+                numbers[i] = b;
+                numbers[j] = a;
+                
             }
-
-            
+            for (int d = 0; d < numbers.Length; d++)
+            {
+                Console.WriteLine(numbers[d]);
+            }
+           
         }
     }
 }
-
